@@ -230,4 +230,4 @@ static/
 
 ## 📄 License
 
-本项目暂未指定开源许可证。如需开源，建议添加 `LICENSE` 文件（如 MIT / Apache-2.0）。
+[MIT License](LICENSE) © 2026 Wang Yong
