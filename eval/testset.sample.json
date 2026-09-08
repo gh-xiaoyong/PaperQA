@@ -1,0 +1,91 @@
+{
+  "name": "sample-paper-seed",
+  "description": "示例论文种子测试集：4 类问题 × 12 题（框架验证用；扩充到 30 篇时按同 schema 增加 pdf 与 questions）",
+  "pdf": "data/sample/paperqa_demo.pdf",
+  "questions": [
+    {
+      "id": "F1",
+      "type": "fact",
+      "question": "这篇论文的系统把 PDF 切成分块时，分块大小是多少？",
+      "gold_pages": [1, 3],
+      "gold_answer": "最多 800 tokens，相邻块之间保留 10% 重叠"
+    },
+    {
+      "id": "F2",
+      "type": "fact",
+      "question": "系统的检索结合了哪两种方法？",
+      "gold_pages": [1, 3],
+      "gold_answer": "bge-m3 稠密向量索引与 BM25 全文检索的混合"
+    },
+    {
+      "id": "F3",
+      "type": "fact",
+      "question": "重排序用的是哪个模型？",
+      "gold_pages": [3],
+      "gold_answer": "bge-reranker-v2-m3 交叉编码器"
+    },
+    {
+      "id": "F4",
+      "type": "fact",
+      "question": "用户试用实验中，定位关键信息的平均时间有什么变化？",
+      "gold_pages": [4],
+      "gold_answer": "从约 40 分钟降至 10 分钟"
+    },
+    {
+      "id": "F5",
+      "type": "fact",
+      "question": "三层诊断框架把检索错误归因到哪几层？",
+      "gold_pages": [2],
+      "gold_answer": "检索层、提示层、模型层"
+    },
+    {
+      "id": "C1",
+      "type": "comparative",
+      "question": "400、800、1200 三种分块大小中哪种最好？依据是什么？",
+      "gold_pages": [3],
+      "gold_answer": "800 tokens 最好，依据是它的检索召回率最佳"
+    },
+    {
+      "id": "C2",
+      "type": "comparative",
+      "question": "加入幻觉约束前后，系统的回答准确率分别是多少？",
+      "gold_pages": [1, 4],
+      "gold_answer": "从 62% 提升到 85%"
+    },
+    {
+      "id": "N1",
+      "type": "no_answer",
+      "question": "这篇论文用了 Adam 优化器吗？",
+      "gold_pages": [],
+      "gold_answer": "论文未提供相关信息，系统应明确拒答且不编造"
+    },
+    {
+      "id": "N2",
+      "type": "no_answer",
+      "question": "这篇论文的实验代码开源了吗？",
+      "gold_pages": [],
+      "gold_answer": "论文未提供相关信息，系统应明确拒答且不编造"
+    },
+    {
+      "id": "A1",
+      "type": "analytical",
+      "question": "这篇论文有哪些局限性？",
+      "gold_pages": [2, 3, 4],
+      "gold_answer": "应综合：单篇问答范围限定（第2页）、分块粒度仅对比三种且以召回率选型（第3页）、评估规模小 30篇/240题/15人（第1、4页）等；推断需标注依据"
+    },
+    {
+      "id": "A2",
+      "type": "analytical",
+      "question": "这篇论文的实验设计有什么不足？",
+      "gold_pages": [1, 3, 4],
+      "gold_answer": "应综合：评测规模小、消融不完整（仅验证幻觉约束单变量）、缺外部基线对比、用户实验无对照等；推断需标注依据"
+    },
+    {
+      "id": "A3",
+      "type": "analytical",
+      "question": "这篇论文的核心贡献是什么？",
+      "gold_pages": [1, 2],
+      "gold_answer": "三层诊断框架（第2页明确）与 62%→85% 的幻觉约束效果（第1、4页）；系统本身可作为推断性贡献"
+    }
+  ]
+}

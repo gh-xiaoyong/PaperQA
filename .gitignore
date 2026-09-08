@@ -1,0 +1,107 @@
+# ============================================================
+# 敏感信息 / 密钥（绝对不要提交）
+# ============================================================
+.env
+.env.*
+# 模板保留提交，真实 .env 一律忽略
+!.env.example
+
+# Streamlit secrets（config.toml 是公开配置，可提交）
+.streamlit/secrets.toml
+secrets.toml
+.secrets*
+.credentials*
+
+# 各类密钥/证书/凭据
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+id_dsa
+id_dsa.*
+*.credentials
+credentials.json
+service-account*.json
+.npmrc
+.htpasswd
+
+# ============================================================
+# 个人隐私 / 私有文档
+# ============================================================
+*.docx
+*.doc
+# 论文/简历等私有 PDF（示例论文除外）
+*.pdf
+# 保留用于演示/评测的示例论文
+!data/sample/**
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy/
+*.whl
+
+# ============================================================
+# 本项目运行时产物 / 大数据 / 第三方依赖
+# ============================================================
+.tmp/
+vendor/
+pylibs/
+qdrant_native/
+data/uploads/
+data/history/
+data/library.sqlite3
+*.sqlite3
+*.sqlite
+*.db
+static/papers/
+eval/reports/
+
+# ============================================================
+# 日志 / 临时文件
+# ============================================================
+*.log
+*.tmp
+*.temp
+
+# ============================================================
+# 操作系统 / 编辑器
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
